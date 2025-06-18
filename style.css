@@ -83,6 +83,23 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+
 .project-card, .contact-card, .hobbies-card, .info-card, .edu-card, .exp-card, .skill-card {
   background-color: var(--card-bg);
   padding: 1.5rem;
