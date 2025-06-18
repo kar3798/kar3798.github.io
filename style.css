@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #f4f6f8;
-  --text-color: #222;
-  --primary: #00334e;
-  --accent: #009ddc;
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --primary: #0077b6;
+  --accent: #00b4d8;
   --card-bg: #ffffff;
-  --border-radius: 8px;
+  --border-radius: 12px;
 }
 
 body {
@@ -33,14 +33,14 @@ body.dark {
 }
 
 header {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
   padding: 2rem;
   text-align: center;
 }
 
 body.dark header {
-  background-color: #1e1e1e;
+  background: linear-gradient(135deg, #1e1e1e, #333);
 }
 
 footer {
@@ -83,17 +83,19 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
-.project-card {
-  background: var(--card-bg);
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+.project-card, .contact-card, .hobbies-card, .info-card, .edu-card, .exp-card, .skill-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
+.project-card:hover,
+.skill-card:hover,
+.exp-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 ul {
@@ -121,44 +123,17 @@ a {
   height: 40px;
 }
 
-body.dark .project-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-body.dark .project-card a {
-  color: #58a6ff;
-}
-
-body.dark .project-card p {
-  color: #cccccc;
-}
-
-.skills-section {
-  margin-top: 2rem;
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-.skill-card {
-  background-color: var(--card-bg);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-}
-
-.skill-card h3 {
-  margin-bottom: 0.5rem;
+.skill-card h3,
+.exp-card h3,
+.project-card h3 {
   color: var(--primary);
+  margin-top: 0;
 }
 
 .skill-card .icons img {
@@ -167,80 +142,10 @@ body.dark .project-card p {
   vertical-align: middle;
 }
 
-body.dark .skill-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-body.dark .skill-card h3 {
-  color: #58a6ff;
-}
-
-body.dark .skill-card p {
-  color: #cccccc;
-}
-
-body.dark .skill-card .icons img {
-  filter: brightness(0.9) contrast(1.2);
-}
-
-.education-section {
-  margin-bottom: 2rem;
-}
-
-.edu-card {
-  background-color: var(--card-bg);
-  border-left: 5px solid var(--accent);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: background 0.3s;
-}
-
-.edu-header h3 {
-  margin: 0;
-  color: var(--primary);
-}
-
-.edu-header span {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--text-color);
-  margin-top: 0.2rem;
-}
-
-.edu-duration {
-  font-style: italic;
-  color: var(--text-color);
+.edu-header,
+.exp-card ul,
+.project-details {
   margin-top: 0.5rem;
-}
-
-.edu-details ul {
-  margin-top: 0.5rem;
-  padding-left: 1.2rem;
-}
-
-body.dark .edu-card {
-  background-color: #1e1e1e;
-  color: #ddd;
-}
-
-body.dark .edu-header h3 {
-  color: #58a6ff;
-}
-
-body.dark .edu-duration {
-  color: #aaa;
-}
-
-.edu-card {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
 }
 
 .edu-header {
@@ -251,12 +156,14 @@ body.dark .edu-duration {
   gap: 1rem;
 }
 
-.edu-text h3 {
-  margin: 0;
+.edu-text h3,
+.edu-header h3 {
   font-size: 1.2rem;
+  margin: 0;
 }
 
-.edu-text span {
+.edu-text span,
+.edu-header span {
   display: block;
   font-size: 0.95rem;
   color: var(--text-color);
@@ -265,79 +172,13 @@ body.dark .edu-duration {
 .edu-duration {
   font-style: italic;
   color: gray;
+  margin-top: 0.5rem;
 }
 
 .edu-logo {
   width: 60px;
   height: auto;
   object-fit: contain;
-}
-
-.experience-section {
-  margin-top: 2rem;
-}
-
-.exp-card {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.exp-card:hover {
-  transform: translateY(-4px);
-}
-
-.exp-card h3 {
-  margin-top: 0;
-  color: var(--primary);
-}
-
-.exp-card ul {
-  margin-top: 0.5rem;
-  padding-left: 1.2rem;
-}
-
-body.dark .exp-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-body.dark .exp-card h3 {
-  color: #90caf9;
-}
-
-body.dark .exp-card ul li {
-  color: #cccccc;
-}
-
-/* Project Cards Container */
-.projects {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-/* Individual Project Card */
-.project-card {
-  background-color: var(--card-bg);
-  padding: 1.2rem 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid var(--accent);
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Title Link Styling */
-.project-card h3 {
-  margin-bottom: 0.5rem;
 }
 
 .project-card h3 a {
@@ -349,118 +190,44 @@ body.dark .exp-card ul li {
   text-decoration: underline;
 }
 
-/* Description Paragraph */
-.project-card p {
-  margin-bottom: 0.5rem;
-}
-
-/* Project Meta List */
-.project-details {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--text-color);
-}
-
 .project-details li {
   margin-bottom: 0.3rem;
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* Dark Mode Overrides */
-body.dark .project-card {
+/* DARK MODE */
+
+body.dark .project-card,
+body.dark .contact-card,
+body.dark .hobbies-card,
+body.dark .info-card,
+body.dark .edu-card,
+body.dark .exp-card,
+body.dark .skill-card {
   background-color: #1e1e1e;
-  color: #f0f0f0;
+  color: #e0e0e0;
 }
 
-body.dark .project-card h3 a {
+body.dark .project-card a,
+body.dark .exp-card h3,
+body.dark .skill-card h3 {
   color: #58a6ff;
 }
 
-body.dark .project-details li {
+body.dark .project-card p,
+body.dark .skill-card p,
+body.dark .edu-duration,
+body.dark .project-details li,
+body.dark .exp-card ul li {
   color: #cccccc;
 }
 
-.contact-card {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+body.dark .skill-card .icons img {
+  filter: brightness(0.9) contrast(1.2);
 }
 
-.contact-card ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.contact-card li {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.contact-card a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.contact-card a:hover {
-  text-decoration: underline;
-}
-
-body.dark .contact-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-.hobbies-card {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-top: 1.5rem;
-}
-
-.hobbies-card p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.hobbies-card a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.hobbies-card a:hover {
-  text-decoration: underline;
-}
-
-body.dark .hobbies-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-.info-card {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-top: 1rem;
-}
-
-.info-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.info-card li {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
-body.dark .info-card {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+body.dark .contact-card a,
+body.dark .hobbies-card a {
+  color: #58a6ff;
 }
