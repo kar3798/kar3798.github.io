@@ -83,22 +83,32 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.header-text h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
+.header-text p {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
 
 .project-card, .contact-card, .hobbies-card, .info-card, .edu-card, .exp-card, .skill-card {
   background-color: var(--card-bg);
@@ -248,3 +258,4 @@ body.dark .contact-card a,
 body.dark .hobbies-card a {
   color: #58a6ff;
 }
+
