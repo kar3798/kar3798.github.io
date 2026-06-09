@@ -530,6 +530,15 @@ section h2 {
 }
 .project-details li strong { color: var(--text); }
 
+.project-details li a {
+  color: var(--primary);
+  font-size: 0.82rem;
+  text-decoration: underline;
+}
+.project-details li a:hover {
+  color: var(--accent);
+}
+
 /* === PROJECT TABS === */
 .proj-tabs {
   display: flex;
